@@ -13,3 +13,8 @@ djangorestframework = "*"
 
 [dev-packages]
 
+
+
+[pipenv]
+
+allow_prereleases = true
