@@ -8,8 +8,8 @@ class User(models.User):
 
 
 class Group(Model):
-    groupname = CharField(max_length=100)
+    groupname = CharField(max_length=100, primary_key=True)
     members = ManyToManyField(User)
     created_at = DateTimeField(auto_now_add=True)
-    updated_at = DateTimeField(auto_now_add=True)
+    updated_at = DateTimeField(auto_now=True)
 

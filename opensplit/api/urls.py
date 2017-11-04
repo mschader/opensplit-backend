@@ -1,7 +1,12 @@
-from django.conf.urls import url
-from . import views
+from django.urls import path, include
+from rest_framework import routers
+
+from opensplit.api import views
+
+
+router_v1 = routers.DefaultRouter()
+router_v1.register('users', views.UserViewSet)
 
 urlpatterns = [
-    url(r'^v1/user/$', views.user_list),
-    url(r'^v1/user/(?P<pk>[0-9]+)/$', views.user_detail),
+    path('v1/', include(router_v1.urls))
 ]
